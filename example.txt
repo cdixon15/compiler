@@ -1,0 +1,6 @@
+"this is a string with 6 words"
+do double else exit function if integer print_double print_integer print_string procedure program read_double read_integer read_string return string then while := *= /= %= , // && / || == >= > [ <= { ( < - -- % * != ! . + ++ ] } ) ;
+1.00
+10.89d-27
+$identifier_$6
+1234567890

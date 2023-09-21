@@ -5,118 +5,118 @@
 %}
 
 %%
-"do" {fprintf(yyout,"k do\n");
-    return K_DO;}
-"double" {fprintf(yyout,"k double\n");
-    return K_DOUBLE;}
-"else" {fprintf(yyout,"k else\n");
-    return K_ELSE;}
-"exit" {fprintf(yyout,"k exit\n");
-    return K_EXIT;}
-"function" {fprintf(yyout,"k function\n");
-    return K_FUNCTION;}
-"if" {fprintf(yyout,"k if\n");
-    return K_IF;}
-"integer" {fprintf(yyout,"k integer\n");
-    return K_INTEGER;}
-"print_double" {fprintf(yyout,"k print double\n");
-    return K_PRINT_DOUBLE;}
-"print_integer" {fprintf(yyout,"k print integer\n");
-    return K_PRINT_INTEGER;}
-"print_string" {fprintf(yyout,"k print string\n");
-    return K_PRINT_STRING;}
-"procedure" {fprintf(yyout,"k procedure\n");
-    return K_PROCEDURE;}
-"program" {fprintf(yyout,"k program\n");
-    return K_PROGRAM;}
-"read_double" {fprintf(yyout,"k read double\n");
-    return K_READ_DOUBLE;}
-"read_integer" {fprintf(yyout,"k read integer\n");
-    return K_READ_INTEGER;}
-"read_string" {fprintf(yyout,"k read string\n");
-    return K_READ_STRING;}
-"return" {fprintf(yyout,"k return\n");
-    return K_RETURN;}
-"string" {fprintf(yyout,"k string\n");
-    return K_STRING;}
-"then" {fprintf(yyout,"k then\n");
-    return K_THEN;}
-"while" {fprintf(yyout,"k while\n");
-    return K_WHILE;}
-":=" {fprintf(yyout,"assign\n");
-    return ASSIGN;}
-"+=" {fprintf(yyout,"assign plus\n");
-    return ASSIGN_PLUS;}
-"-=" {fprintf(yyout,"assign minus\n");
-    return ASSIGN_MINUS;}
-"*=" {fprintf(yyout,"assign multiply\n");
-    return ASSIGN_MULTIPLY;}
-"/=" {fprintf(yyout,"assign divide\n");
-    return ASSIGN_DIVIDE;}
-"%=" {fprintf(yyout,"assign mod\n");
-    return ASSIGN_MOD;}
-"," {fprintf(yyout,"comma\n");
-    return COMMA;}
-"//" {fprintf(yyout,"comment\n");
-    return COMMENT;}
-"&&" {fprintf(yyout,"dand\n");
-    return DAND;}
-"/" {fprintf(yyout,"divide\n");
-    return DIVIDE;}
-"||" {fprintf(yyout,"dor\n");
-    return DOR;}
-"==" {fprintf(yyout,"deq\n");
-    return DEQ;}
-">=" {fprintf(yyout,"geq\n");
-    return GEQ;}
-">" {fprintf(yyout,"gt\n");
-    return GT;}
-"[" {fprintf(yyout,"lbracket\n");
-    return LBRACKET;}
-"<=" {fprintf(yyout,"leq\n");
-    return LEQ;}
-"{" {fprintf(yyout,"lcurly\n");
-    return LCURLY;}
-"(" {fprintf(yyout,"lparen\n");
-    return LPAREN;}
-"<" {fprintf(yyout,"lt\n");
-    return LT;}
-"-" {fprintf(yyout,"minus\n");
-    return MINUS;}
-"--" {fprintf(yyout,"decrement\n");
-    return DECREMENT;}    
-"%" {fprintf(yyout,"mod\n");
-    return MOD;}
-"*" {fprintf(yyout,"multiply\n");
-    return MULTIPLY;}
-"!=" {fprintf(yyout,"ne\n");
-    return NE;}
-"!" {fprintf(yyout,"not\n");
-    return NOT;}
-"." {fprintf(yyout,"period");
-    return PERIOD;}
-"+" {fprintf(yyout,"plus\n");
-    return PLUS;}
-"++" {fprintf(yyout,"increment\n");
-    return INCREMENT;}
-"]" {fprintf(yyout,"rbracket\n");
-    return RBRACKET;}
-"}" {fprintf(yyout,"rcurly\n");
-    return RCURLY;}
-")" {fprintf(yyout,"rparen\n");
-    return RPAREN;}
-";" {fprintf(yyout,"semicolon\n");
-    return SEMI; }
+"do" {fprintf(yyout,"K_DO\n");
+    }
+"double" {fprintf(yyout,"K_DOUBLE\n");
+    }
+"else" {fprintf(yyout,"K_ELSE\n");
+    }
+"exit" {fprintf(yyout,"K_EXIT\n");
+    }
+"function" {fprintf(yyout,"K_FUNCTION\n");
+    }
+"if" {fprintf(yyout,"K_IF\n");
+    }
+"integer" {fprintf(yyout,"K_INTEGER\n");
+    }
+"print_double" {fprintf(yyout,"K_PRINT_DOUBLE\n");
+    }
+"print_integer" {fprintf(yyout,"K_PRINT_INTEGER\n");
+    }
+"print_string" {fprintf(yyout,"K_PRINT_STRING\n");
+    }
+"procedure" {fprintf(yyout,"K_PROCEDURE\n");
+    }
+"program" {fprintf(yyout,"K_PROGRAM\n");
+    }
+"read_double" {fprintf(yyout,"K_READ_DOUBLE\n");
+    }
+"read_integer" {fprintf(yyout,"K_READ_INTEGER\n");
+    }
+"read_string" {fprintf(yyout,"K_READ_STRING\n");
+    }
+"return" {fprintf(yyout,"K_RETURN\n");
+    }
+"string" {fprintf(yyout,"K_STRING\n");
+    }
+"then" {fprintf(yyout,"K_THEN\n");
+    }
+"while" {fprintf(yyout,"K_WHILE\n");
+    }
+":=" {fprintf(yyout,"ASSIGN\n");
+    }
+"+=" {fprintf(yyout,"ASSIGN_PLUS\n");
+    }
+"-=" {fprintf(yyout,"ASSIGN_MINUS\n");
+    }
+"*=" {fprintf(yyout,"ASSIGN_MULTIPLY\n");
+    }
+"/=" {fprintf(yyout,"ASSIGN_DIVIDE\n");
+    }
+"%=" {fprintf(yyout,"ASSIGN_MOD\n");
+    }
+"," {fprintf(yyout,"COMMA\n");
+    }
+"//" {fprintf(yyout,"COMMENT\n");
+    }
+"&&" {fprintf(yyout,"DAND\n");
+    }
+"/" {fprintf(yyout,"DIVIDE\n");
+    }
+"||" {fprintf(yyout,"DOR\n");
+    }
+"==" {fprintf(yyout,"DEQ\n");
+    }
+">=" {fprintf(yyout,"GEQ\n");
+    }
+">" {fprintf(yyout,"GT\n");
+    }
+"[" {fprintf(yyout,"LBRACKET\n");
+    }
+"<=" {fprintf(yyout,"LEQ\n");
+    }
+"{" {fprintf(yyout,"LCURLY\n");
+    }
+"(" {fprintf(yyout,"LPAREN\n");
+    }
+"<" {fprintf(yyout,"LT\n");
+    }
+"-" {fprintf(yyout,"MINUS\n");
+    }
+"--" {fprintf(yyout,"DECREMENT\n");
+    }    
+"%" {fprintf(yyout,"MOD\n");
+    }
+"*" {fprintf(yyout,"MULTIPLY\n");
+    }
+"!=" {fprintf(yyout,"NE\n");
+    }
+"!" {fprintf(yyout,"NOT\n");
+    }
+"." {fprintf(yyout,"PERIOD");
+    }
+"+" {fprintf(yyout,"PLUS\n");
+    }
+"++" {fprintf(yyout,"INCREMENT\n");
+    }
+"]" {fprintf(yyout,"RBRACKET\n");
+    }
+"}" {fprintf(yyout,"RCURLY\n");
+    }
+")" {fprintf(yyout,"RPAREN\n");
+    }
+";" {fprintf(yyout,"SEMI\n");
+    }
 
-([0-9]*\.[0-9]*[d][+-][0-9]*)|([0-9]*\.[0-9]*) {fprintf(yyout,"dconstant\n"); 
-    return DCONSTANT;}
+([0-9]*\.[0-9]*[d][+-][0-9]*)|([0-9]*\.[0-9]*) {fprintf(yyout,"DCONSTANT\n"); 
+    }
     
-([a-zA-Z|_|$][a-zA-Z0-9|_|$]){0,31} {fprintf(yyout,"indentifier\n");
-    return IDENTIFIER;}
-(\"(\n|.)*\") {fprintf(yyout,"sconstant\n");
-    return SCONSTANT;}
-([0-9])+ {fprintf(yyout,"iconstant\n"); 
-    return ICONSTANT;}
+([a-zA-Z|_|$][a-zA-Z0-9|_|$]){0,31} {fprintf(yyout,"IDENTIFIER\n");
+    }
+(\"(\\n|.)*\") {fprintf(yyout,"SCONSTANT\n");
+    }
+([0-9])+ {fprintf(yyout,"ICONSTANT\n"); 
+    }
 %%
 
 int yywrap(void){}
@@ -126,7 +126,7 @@ int main(int argc, char *argv[])
 
     extern FILE *yyin, *yyout;
 
-    yyin = fopen("example.txt", "r");    
+    yyin = fopen(argv[1], "r");    
     yyout = fopen("output.txt", "w");
     yylex();
     fclose(yyin);
