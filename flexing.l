@@ -1,149 +1,124 @@
-
 %{
 #include "flexing.h"
+#include <stdio.h>
+#include <string.h>
 %}
 
 %%
-"do" 
-    {printf(COMMENT);
+"do" {printf("k do\n");
     return K_DO;}
-"double" 
-    {printf(COMMENT);
+"double" {printf("k double\n");
     return K_DOUBLE;}
-"else" 
-    {printf(COMMENT);
+"else" {printf("k else\n");
     return K_ELSE;}
-"exit" 
-    {printf(COMMENT);
+"exit" {printf("k exit\n");
     return K_EXIT;}
-"function" 
-    {printf(COMMENT);
+"function" {printf("k function\n");
     return K_FUNCTION;}
-"if" 
-    {printf(COMMENT);
+"if" {printf("k if\n");
     return K_IF;}
-"integer" 
-    {printf(COMMENT);
+"integer" {printf("k integer\n");
     return K_INTEGER;}
-"print_double" 
-    {printf(COMMENT);
+"print_double" {printf("k print double\n");
     return K_PRINT_DOUBLE;}
-"print_integer" 
-    {printf(COMMENT);
+"print_integer" {printf("k print integer\n");
     return K_PRINT_INTEGER;}
-"print_string" 
-    {printf(COMMENT);
+"print_string" {printf("k print string\n");
     return K_PRINT_STRING;}
-"procedure" 
-    {printf(COMMENT);
+"procedure" {printf("k procedure\n");
     return K_PROCEDURE;}
-"program" 
-    {printf(COMMENT);
+"program" {printf("k program\n");
     return K_PROGRAM;}
-"read_double" 
-    {printf(COMMENT);
+"read_double" {printf("k read double\n");
     return K_READ_DOUBLE;}
-"read_integer" 
-    {printf(COMMENT);
+"read_integer" {printf("k read integer\n");
     return K_READ_INTEGER;}
-"read_string" 
-    {printf(COMMENT);
+"read_string" {printf("k read string\n");
     return K_READ_STRING;}
-"return" 
-    {printf(COMMENT);
+"return" {printf("k return\n");
     return K_RETURN;}
-"string" 
-    {printf(COMMENT);
+"string" {printf("k string\n");
     return K_STRING;}
-"then" 
-    {printf(COMMENT);
+"then" {printf("k then\n");
     return K_THEN;}
-"while" 
-    {printf(COMMENT);
+"while" {printf("k while\n");
     return K_WHILE;}
-":=" 
-    {printf(COMMENT);
+":=" {printf("assign\n");
     return ASSIGN;}
-"+=" 
-    {printf(COMMENT);
+"+=" {printf("assign plus\n");
     return ASSIGN_PLUS;}
-"-=" 
-    {printf(COMMENT);
+"-=" {printf("assign minus\n");
     return ASSIGN_MINUS;}
-"*=" 
-    {printf(COMMENT);
+"*=" {printf("assign multiply\n");
     return ASSIGN_MULTIPLY;}
-"/=" 
-    {printf(COMMENT);
+"/=" {printf("assign divide\n");
     return ASSIGN_DIVIDE;}
-"%=" 
-    {printf(COMMENT);
+"%=" {printf("assign mod\n");
     return ASSIGN_MOD;}
-"," 
-    {printf(COMMENT);
+"," {printf("comma\n");
     return COMMA;}
-"//" 
-    {printf(COMMENT);
+"//" {printf("comment\n");
     return COMMENT;}
-"&&" 
-    {printf(COMMENT);
+"&&" {printf("dand\n");
     return DAND;}
-"/" 
-    {printf(COMMENT);
+"/" {printf("divide\n");
     return DIVIDE;}
-"||" 
-    {printf(COMMENT);
+"||" {printf("dor\n");
     return DOR;}
-"=="
-    {printf(COMMENT);
+"==" {printf("deq\n");
     return DEQ;}
-">=" 
-    {printf(COMMENT);
+">=" {printf("geq\n");
     return GEQ;}
-">" 
-    {printf(COMMENT);
+">" {printf("gt\n");
     return GT;}
-"[" 
-    {printf(COMMENT);
+"[" {printf("lbracket\n");
     return LBRACKET;}
-"<=" 
-    {printf(COMMENT);
+"<=" {printf("leq\n");
     return LEQ;}
-"{" 
-    {printf(COMMENT);
+"{" {printf("lcurly\n");
     return LCURLY;}
-"(" 
-    {printf(COMMENT);
+"(" {printf("lparen\n");
     return LPAREN;}
-"<" 
-    {printf(COMMENT);
+"<" {printf("lt\n");
     return LT;}
-"-" 
-    {printf(COMMENT);
+"-" {printf("minus\n");
     return MINUS;}
-"--" 
-    {printf(COMMENT);
+"--" {printf("decrement\n");
     return DECREMENT;}    
-"%" 
-    {printf(COMMENT);
+"%" {printf("mod\n");
     return MOD;}
-"*" return MULTIPLY;
-"!=" return NE;
-"!" return NOT;
-"." return PERIOD;
-"+" return PLUS;
-"++" return INCREMENT;
-"]" return RBRACKET;
-"}" return RCURLY;
-")" return RPAREN;
-";" return SEMI; 
-[a-zA-Z|_|$][a-zA-Z0-9|_|$]{0,31} return IDENTIFIER;
-\"(\n|.)*\" return SCONSTANT;
-[0-9]+ return ICONSTANT;
-"([0-9]*\.[0-9]*[d][+-][0-9]*)|([0-9]*\.[0-9]*)" return DCONSTANT;
-[/t/n:space::blank:] ;
+"*" {printf("multiply\n");
+    return MULTIPLY;}
+"!=" {printf("ne\n");
+    return NE;}
+"!" {printf("not\n");
+    return NOT;}
+"." {printf("period");
+    return PERIOD;}
+"+" {printf("plus\n");
+    return PLUS;}
+"++" {printf("increment\n");
+    return INCREMENT;}
+"]" {printf("rbracket\n");
+    return RBRACKET;}
+"}" {printf("rcurly\n");
+    return RCURLY;}
+")" {printf("rparen\n");
+    return RPAREN;}
+";" {printf("semicolon\n");
+    return SEMI; }
 
+([0-9]*\.[0-9]*[d][+-][0-9]*)|([0-9]*\.[0-9]*) {printf("dconstant\n"); 
+    return DCONSTANT;}
+    
+([a-zA-Z|_|$][a-zA-Z0-9|_|$]){0,31} {printf("indentifier\n");
+    return IDENTIFIER;}
+(\"(\n|.)*\") {printf("sconstant\n");
+    return SCONSTANT;}
+([0-9])+ {printf("iconstant\n"); 
+    return ICONSTANT;}
 %%
+
 int yywrap(void){}
   
 int main(int argc, char *argv[])
