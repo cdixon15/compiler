@@ -5,6 +5,7 @@
 %}
 
 %%
+[ \n\t\r]+ {}
 "do" {fprintf(yyout,"K_DO\n");
     }
 "double" {fprintf(yyout,"K_DOUBLE\n");
@@ -93,7 +94,7 @@
     }
 "!" {fprintf(yyout,"NOT\n");
     }
-"." {fprintf(yyout,"PERIOD");
+"." {fprintf(yyout,"PERIOD\n");
     }
 "+" {fprintf(yyout,"PLUS\n");
     }
@@ -111,7 +112,7 @@
 ([0-9]*\.[0-9]*[d][+-][0-9]*)|([0-9]*\.[0-9]*) {fprintf(yyout,"DCONSTANT\n"); 
     }
     
-([a-zA-Z|_|$][a-zA-Z0-9|_|$]){0,31} {fprintf(yyout,"IDENTIFIER\n");
+([a-zA-Z|_|$][a-zA-Z0-9|_|$]){0,31} {fwrite("IDENTIFIER\n",1,sizeof("IDENTIFIER\n"),yyout);
     }
 (\"(\\n|.)*\") {fprintf(yyout,"SCONSTANT\n");
     }
@@ -126,10 +127,11 @@ int main(int argc, char *argv[])
 
     extern FILE *yyin, *yyout;
 
-    yyin = fopen(argv[1], "r");    
-    yyout = fopen("output.txt", "w");
+    yyin = fopen(argv[1], "rb");    
+    yyout = fopen(argv[2], "wb");
     yylex();
     fclose(yyin);
+    fclose(yyout);
 
     return 0;
 }
