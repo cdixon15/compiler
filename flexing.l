@@ -5,117 +5,117 @@
 %}
 
 %%
-"do" {printf("k do\n");
+"do" {fprintf(yyout,"k do\n");
     return K_DO;}
-"double" {printf("k double\n");
+"double" {fprintf(yyout,"k double\n");
     return K_DOUBLE;}
-"else" {printf("k else\n");
+"else" {fprintf(yyout,"k else\n");
     return K_ELSE;}
-"exit" {printf("k exit\n");
+"exit" {fprintf(yyout,"k exit\n");
     return K_EXIT;}
-"function" {printf("k function\n");
+"function" {fprintf(yyout,"k function\n");
     return K_FUNCTION;}
-"if" {printf("k if\n");
+"if" {fprintf(yyout,"k if\n");
     return K_IF;}
-"integer" {printf("k integer\n");
+"integer" {fprintf(yyout,"k integer\n");
     return K_INTEGER;}
-"print_double" {printf("k print double\n");
+"print_double" {fprintf(yyout,"k print double\n");
     return K_PRINT_DOUBLE;}
-"print_integer" {printf("k print integer\n");
+"print_integer" {fprintf(yyout,"k print integer\n");
     return K_PRINT_INTEGER;}
-"print_string" {printf("k print string\n");
+"print_string" {fprintf(yyout,"k print string\n");
     return K_PRINT_STRING;}
-"procedure" {printf("k procedure\n");
+"procedure" {fprintf(yyout,"k procedure\n");
     return K_PROCEDURE;}
-"program" {printf("k program\n");
+"program" {fprintf(yyout,"k program\n");
     return K_PROGRAM;}
-"read_double" {printf("k read double\n");
+"read_double" {fprintf(yyout,"k read double\n");
     return K_READ_DOUBLE;}
-"read_integer" {printf("k read integer\n");
+"read_integer" {fprintf(yyout,"k read integer\n");
     return K_READ_INTEGER;}
-"read_string" {printf("k read string\n");
+"read_string" {fprintf(yyout,"k read string\n");
     return K_READ_STRING;}
-"return" {printf("k return\n");
+"return" {fprintf(yyout,"k return\n");
     return K_RETURN;}
-"string" {printf("k string\n");
+"string" {fprintf(yyout,"k string\n");
     return K_STRING;}
-"then" {printf("k then\n");
+"then" {fprintf(yyout,"k then\n");
     return K_THEN;}
-"while" {printf("k while\n");
+"while" {fprintf(yyout,"k while\n");
     return K_WHILE;}
-":=" {printf("assign\n");
+":=" {fprintf(yyout,"assign\n");
     return ASSIGN;}
-"+=" {printf("assign plus\n");
+"+=" {fprintf(yyout,"assign plus\n");
     return ASSIGN_PLUS;}
-"-=" {printf("assign minus\n");
+"-=" {fprintf(yyout,"assign minus\n");
     return ASSIGN_MINUS;}
-"*=" {printf("assign multiply\n");
+"*=" {fprintf(yyout,"assign multiply\n");
     return ASSIGN_MULTIPLY;}
-"/=" {printf("assign divide\n");
+"/=" {fprintf(yyout,"assign divide\n");
     return ASSIGN_DIVIDE;}
-"%=" {printf("assign mod\n");
+"%=" {fprintf(yyout,"assign mod\n");
     return ASSIGN_MOD;}
-"," {printf("comma\n");
+"," {fprintf(yyout,"comma\n");
     return COMMA;}
-"//" {printf("comment\n");
+"//" {fprintf(yyout,"comment\n");
     return COMMENT;}
-"&&" {printf("dand\n");
+"&&" {fprintf(yyout,"dand\n");
     return DAND;}
-"/" {printf("divide\n");
+"/" {fprintf(yyout,"divide\n");
     return DIVIDE;}
-"||" {printf("dor\n");
+"||" {fprintf(yyout,"dor\n");
     return DOR;}
-"==" {printf("deq\n");
+"==" {fprintf(yyout,"deq\n");
     return DEQ;}
-">=" {printf("geq\n");
+">=" {fprintf(yyout,"geq\n");
     return GEQ;}
-">" {printf("gt\n");
+">" {fprintf(yyout,"gt\n");
     return GT;}
-"[" {printf("lbracket\n");
+"[" {fprintf(yyout,"lbracket\n");
     return LBRACKET;}
-"<=" {printf("leq\n");
+"<=" {fprintf(yyout,"leq\n");
     return LEQ;}
-"{" {printf("lcurly\n");
+"{" {fprintf(yyout,"lcurly\n");
     return LCURLY;}
-"(" {printf("lparen\n");
+"(" {fprintf(yyout,"lparen\n");
     return LPAREN;}
-"<" {printf("lt\n");
+"<" {fprintf(yyout,"lt\n");
     return LT;}
-"-" {printf("minus\n");
+"-" {fprintf(yyout,"minus\n");
     return MINUS;}
-"--" {printf("decrement\n");
+"--" {fprintf(yyout,"decrement\n");
     return DECREMENT;}    
-"%" {printf("mod\n");
+"%" {fprintf(yyout,"mod\n");
     return MOD;}
-"*" {printf("multiply\n");
+"*" {fprintf(yyout,"multiply\n");
     return MULTIPLY;}
-"!=" {printf("ne\n");
+"!=" {fprintf(yyout,"ne\n");
     return NE;}
-"!" {printf("not\n");
+"!" {fprintf(yyout,"not\n");
     return NOT;}
-"." {printf("period");
+"." {fprintf(yyout,"period");
     return PERIOD;}
-"+" {printf("plus\n");
+"+" {fprintf(yyout,"plus\n");
     return PLUS;}
-"++" {printf("increment\n");
+"++" {fprintf(yyout,"increment\n");
     return INCREMENT;}
-"]" {printf("rbracket\n");
+"]" {fprintf(yyout,"rbracket\n");
     return RBRACKET;}
-"}" {printf("rcurly\n");
+"}" {fprintf(yyout,"rcurly\n");
     return RCURLY;}
-")" {printf("rparen\n");
+")" {fprintf(yyout,"rparen\n");
     return RPAREN;}
-";" {printf("semicolon\n");
+";" {fprintf(yyout,"semicolon\n");
     return SEMI; }
 
-([0-9]*\.[0-9]*[d][+-][0-9]*)|([0-9]*\.[0-9]*) {printf("dconstant\n"); 
+([0-9]*\.[0-9]*[d][+-][0-9]*)|([0-9]*\.[0-9]*) {fprintf(yyout,"dconstant\n"); 
     return DCONSTANT;}
     
-([a-zA-Z|_|$][a-zA-Z0-9|_|$]){0,31} {printf("indentifier\n");
+([a-zA-Z|_|$][a-zA-Z0-9|_|$]){0,31} {fprintf(yyout,"indentifier\n");
     return IDENTIFIER;}
-(\"(\n|.)*\") {printf("sconstant\n");
+(\"(\n|.)*\") {fprintf(yyout,"sconstant\n");
     return SCONSTANT;}
-([0-9])+ {printf("iconstant\n"); 
+([0-9])+ {fprintf(yyout,"iconstant\n"); 
     return ICONSTANT;}
 %%
 
@@ -123,7 +123,13 @@ int yywrap(void){}
   
 int main(int argc, char *argv[])
 {
-    yyin = fopen(argv[1], "r");
+
+    extern FILE *yyin, *yyout;
+
+    yyin = fopen("example.txt", "r");    
+    yyout = fopen("output.txt", "w");
     yylex();
     fclose(yyin);
+
+    return 0;
 }
