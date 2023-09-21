@@ -4,7 +4,6 @@
 %}
 
 %%
-
 "do" return K_DO;
 "double" return K_DOUBLE;
 "else" return K_ELSE;
@@ -56,14 +55,10 @@
 "}" return RCURLY;
 ")" return RPAREN;
 ";" return SEMI; 
-
-//I think these should be at the bottom
-[a-zA-Z]|[$]|[_][a..z]|[A...Z]|[$]|[_][0...9]{31}  [IDENTIFIER
-SCONSTANT
-ICONSTANT
-DCONSTANT
-DIGIT    [0-9]
-ID       [a-z][a-z0-9]*
+[a-zA-Z|_|$][a-zA-Z0-9|_|$]{0,31} return IDENTIFIER;
+\"(\n|.)*\" return SCONSTANT;
+[0-9]+ return ICONSTANT;
+"([0-9]*\.[0-9]*[d][+-][0-9]*)|([0-9]*\.[0-9]*)" return DCONSTANT;
 [/t/n] ;
 
 %%
