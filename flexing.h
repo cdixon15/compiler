@@ -49,3 +49,7 @@
 #define RCURLY
 #define RPAREN
 #define SEMI
+#define IDENTIFIER
+#define SCONSTANT
+#define ICONSTANT
+#define DCONSTANT

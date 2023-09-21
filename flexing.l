@@ -4,47 +4,129 @@
 %}
 
 %%
-"do" return K_DO;
-"double" return K_DOUBLE;
-"else" return K_ELSE;
-"exit" return K_EXIT;
-"function" return K_FUNCTION;
-"if" return K_IF;
-"integer" return K_INTEGER;
-"print_double" return K_PRINT_DOUBLE;
-"print_integer" return K_PRINT_INTEGER;
-"print_string" return K_PRINT_STRING;
-"procedure" return K_PROCEDURE;
-"program" return K_PROGRAM;
-"read_double" return K_READ_DOUBLE;
-"read_integer" return K_READ_INTEGER;
-"read_string" return K_READ_STRING;
-"return" return K_RETURN;
-"string" return K_STRING;
-"then" return K_THEN;
-"while" return K_WHILE;
-":=" return ASSIGN;
-"+=" return ASSIGN_PLUS;
-"-=" return ASSIGN_MINUS;
-"*=" return ASSIGN_MULTIPLY;
-"/=" return ASSIGN_DIVIDE;
-"%=" return ASSIGN_MOD;
-"," return COMMA;
-"//" return COMMENT;
-"&&" return DAND;
-"/" return DIVIDE;
-"||" return DOR;
-"==" return DEQ;
-">=" return GEQ;
-">" return GT;
-"[" return LBRACKET;
-"<=" return LEQ;
-"{" return LCURLY;
-"(" return LPAREN;
-"<" return LT;
-"-" return MINUS;
-"--" return DECREMENT;
-"%" return MOD;
+"do" 
+    {printf(COMMENT);
+    return K_DO;}
+"double" 
+    {printf(COMMENT);
+    return K_DOUBLE;}
+"else" 
+    {printf(COMMENT);
+    return K_ELSE;}
+"exit" 
+    {printf(COMMENT);
+    return K_EXIT;}
+"function" 
+    {printf(COMMENT);
+    return K_FUNCTION;}
+"if" 
+    {printf(COMMENT);
+    return K_IF;}
+"integer" 
+    {printf(COMMENT);
+    return K_INTEGER;}
+"print_double" 
+    {printf(COMMENT);
+    return K_PRINT_DOUBLE;}
+"print_integer" 
+    {printf(COMMENT);
+    return K_PRINT_INTEGER;}
+"print_string" 
+    {printf(COMMENT);
+    return K_PRINT_STRING;}
+"procedure" 
+    {printf(COMMENT);
+    return K_PROCEDURE;}
+"program" 
+    {printf(COMMENT);
+    return K_PROGRAM;}
+"read_double" 
+    {printf(COMMENT);
+    return K_READ_DOUBLE;}
+"read_integer" 
+    {printf(COMMENT);
+    return K_READ_INTEGER;}
+"read_string" 
+    {printf(COMMENT);
+    return K_READ_STRING;}
+"return" 
+    {printf(COMMENT);
+    return K_RETURN;}
+"string" 
+    {printf(COMMENT);
+    return K_STRING;}
+"then" 
+    {printf(COMMENT);
+    return K_THEN;}
+"while" 
+    {printf(COMMENT);
+    return K_WHILE;}
+":=" 
+    {printf(COMMENT);
+    return ASSIGN;}
+"+=" 
+    {printf(COMMENT);
+    return ASSIGN_PLUS;}
+"-=" 
+    {printf(COMMENT);
+    return ASSIGN_MINUS;}
+"*=" 
+    {printf(COMMENT);
+    return ASSIGN_MULTIPLY;}
+"/=" 
+    {printf(COMMENT);
+    return ASSIGN_DIVIDE;}
+"%=" 
+    {printf(COMMENT);
+    return ASSIGN_MOD;}
+"," 
+    {printf(COMMENT);
+    return COMMA;}
+"//" 
+    {printf(COMMENT);
+    return COMMENT;}
+"&&" 
+    {printf(COMMENT);
+    return DAND;}
+"/" 
+    {printf(COMMENT);
+    return DIVIDE;}
+"||" 
+    {printf(COMMENT);
+    return DOR;}
+"=="
+    {printf(COMMENT);
+    return DEQ;}
+">=" 
+    {printf(COMMENT);
+    return GEQ;}
+">" 
+    {printf(COMMENT);
+    return GT;}
+"[" 
+    {printf(COMMENT);
+    return LBRACKET;}
+"<=" 
+    {printf(COMMENT);
+    return LEQ;}
+"{" 
+    {printf(COMMENT);
+    return LCURLY;}
+"(" 
+    {printf(COMMENT);
+    return LPAREN;}
+"<" 
+    {printf(COMMENT);
+    return LT;}
+"-" 
+    {printf(COMMENT);
+    return MINUS;}
+"--" 
+    {printf(COMMENT);
+    return DECREMENT;}    
+"%" 
+    {printf(COMMENT);
+    return MOD;}
 "*" return MULTIPLY;
 "!=" return NE;
 "!" return NOT;
@@ -59,9 +141,14 @@
 \"(\n|.)*\" return SCONSTANT;
 [0-9]+ return ICONSTANT;
 "([0-9]*\.[0-9]*[d][+-][0-9]*)|([0-9]*\.[0-9]*)" return DCONSTANT;
-[/t/n] ;
+[/t/n:space::blank:] ;
 
 %%
-rules
-%%
-user code
+int yywrap(void){}
+  
+int main(int argc, char *argv[])
+{
+    yyin = fopen(argv[1], "r");
+    yylex();
+    fclose(yyin);
+}
