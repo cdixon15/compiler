@@ -58,7 +58,7 @@
     }
 "," {fprintf(yyout,"COMMA\n");
     }
-"//" {fprintf(yyout,"COMMENT\n");
+(\/\/.*)[\n] {fprintf(yyout,"COMMENT\n"); //comments include newlines
     }
 "&&" {fprintf(yyout,"DAND\n");
     }
