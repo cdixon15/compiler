@@ -1,5 +1,5 @@
 Lexer
-Collin Dixon
+Collin Dixon & James Lucid
 COSC 4785
 9/21/2023
 
