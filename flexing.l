@@ -6,117 +6,117 @@
 
 %%
 [ \n\t\r]+ {}
-"do" {fprintf(yyout,"K_DO\n");
+"do" {printf("K_DO\n",);
     }
-"double" {fprintf(yyout,"K_DOUBLE\n");
+"double" {printf("K_DOUBLE\n");
     }
-"else" {fprintf(yyout,"K_ELSE\n");
+"else" {printf("K_ELSE\n");
     }
-"exit" {fprintf(yyout,"K_EXIT\n");
+"exit" {printf("K_EXIT\n");
     }
-"function" {fprintf(yyout,"K_FUNCTION\n");
+"function" {printf("K_FUNCTION\n");
     }
-"if" {fprintf(yyout,"K_IF\n");
+"if" {printf("K_IF\n");
     }
-"integer" {fprintf(yyout,"K_INTEGER\n");
+"integer" {printf("K_INTEGER\n");
     }
-"print_double" {fprintf(yyout,"K_PRINT_DOUBLE\n");
+"print_double" {printf("K_PRINT_DOUBLE\n");
     }
-"print_integer" {fprintf(yyout,"K_PRINT_INTEGER\n");
+"print_integer" {printf("K_PRINT_INTEGER\n");
     }
-"print_string" {fprintf(yyout,"K_PRINT_STRING\n");
+"print_string" {printf("K_PRINT_STRING\n");
     }
-"procedure" {fprintf(yyout,"K_PROCEDURE\n");
+"procedure" {printf("K_PROCEDURE\n");
     }
-"program" {fprintf(yyout,"K_PROGRAM\n");
+"program" {printf("K_PROGRAM\n");
     }
-"read_double" {fprintf(yyout,"K_READ_DOUBLE\n");
+"read_double" {printf("K_READ_DOUBLE\n");
     }
-"read_integer" {fprintf(yyout,"K_READ_INTEGER\n");
+"read_integer" {printf("K_READ_INTEGER\n");
     }
-"read_string" {fprintf(yyout,"K_READ_STRING\n");
+"read_string" {printf("K_READ_STRING\n");
     }
-"return" {fprintf(yyout,"K_RETURN\n");
+"return" {printf("K_RETURN\n");
     }
-"string" {fprintf(yyout,"K_STRING\n");
+"string" {printf("K_STRING\n");
     }
-"then" {fprintf(yyout,"K_THEN\n");
+"then" {printf("K_THEN\n");
     }
-"while" {fprintf(yyout,"K_WHILE\n");
+"while" {printf("K_WHILE\n");
     }
-":=" {fprintf(yyout,"ASSIGN\n");
+":=" {printf("ASSIGN\n");
     }
-"+=" {fprintf(yyout,"ASSIGN_PLUS\n");
+"+=" {printf("ASSIGN_PLUS\n");
     }
-"-=" {fprintf(yyout,"ASSIGN_MINUS\n");
+"-=" {printf("ASSIGN_MINUS\n");
     }
-"*=" {fprintf(yyout,"ASSIGN_MULTIPLY\n");
+"*=" {printf("ASSIGN_MULTIPLY\n");
     }
-"/=" {fprintf(yyout,"ASSIGN_DIVIDE\n");
+"/=" {printf("ASSIGN_DIVIDE\n");
     }
-"%=" {fprintf(yyout,"ASSIGN_MOD\n");
+"%=" {printf("ASSIGN_MOD\n");
     }
-"," {fprintf(yyout,"COMMA\n");
+"," {printf("COMMA\n");
     }
-(\/\/.*)[\n] {fprintf(yyout,"COMMENT\n"); //comments include newlines
+(\/\/.*)[\n] {printf("COMMENT\n"); //comments include newlines
     }
-"&&" {fprintf(yyout,"DAND\n");
+"&&" {printf("DAND\n");
     }
-"/" {fprintf(yyout,"DIVIDE\n");
+"/" {printf("DIVIDE\n");
     }
-"||" {fprintf(yyout,"DOR\n");
+"||" {printf("DOR\n");
     }
-"==" {fprintf(yyout,"DEQ\n");
+"==" {printf("DEQ\n");
     }
-">=" {fprintf(yyout,"GEQ\n");
+">=" {printf("GEQ\n");
     }
-">" {fprintf(yyout,"GT\n");
+">" {printf("GT\n");
     }
-"[" {fprintf(yyout,"LBRACKET\n");
+"[" {printf("LBRACKET\n");
     }
-"<=" {fprintf(yyout,"LEQ\n");
+"<=" {printf("LEQ\n");
     }
-"{" {fprintf(yyout,"LCURLY\n");
+"{" {printf("LCURLY\n");
     }
-"(" {fprintf(yyout,"LPAREN\n");
+"(" {printf("LPAREN\n");
     }
-"<" {fprintf(yyout,"LT\n");
+"<" {printf("LT\n");
     }
-"-" {fprintf(yyout,"MINUS\n");
+"-" {printf("MINUS\n");
     }
-"--" {fprintf(yyout,"DECREMENT\n");
+"--" {printf("DECREMENT\n");
     }    
-"%" {fprintf(yyout,"MOD\n");
+"%" {printf("MOD\n");
     }
-"*" {fprintf(yyout,"MULTIPLY\n");
+"*" {printf("MULTIPLY\n");
     }
-"!=" {fprintf(yyout,"NE\n");
+"!=" {printf("NE\n");
     }
-"!" {fprintf(yyout,"NOT\n");
+"!" {printf("NOT\n");
     }
-"." {fprintf(yyout,"PERIOD\n");
+"." {printf("PERIOD\n");
     }
-"+" {fprintf(yyout,"PLUS\n");
+"+" {printf("PLUS\n");
     }
-"++" {fprintf(yyout,"INCREMENT\n");
+"++" {printf("INCREMENT\n");
     }
-"]" {fprintf(yyout,"RBRACKET\n");
+"]" {printf("RBRACKET\n");
     }
-"}" {fprintf(yyout,"RCURLY\n");
+"}" {printf("RCURLY\n");
     }
-")" {fprintf(yyout,"RPAREN\n");
+")" {printf("RPAREN\n");
     }
-";" {fprintf(yyout,"SEMI\n");
+";" {printf("SEMI\n");
     }
 
-([0-9]*\.[0-9]*[d][+-][0-9]*)|([0-9]*\.[0-9]*) {fprintf(yyout,"DCONSTANT\n"); 
+([0-9]*\.[0-9]*[d][+-][0-9]*)|([0-9]*\.[0-9]*) {printf("DCONSTANT\n"); 
     }
     
 ([a-zA-Z|_|$][a-zA-Z0-9|_|$]){0,31} {fwrite("IDENTIFIER\n",1,sizeof("IDENTIFIER\n"),yyout);
     }
-(\"(\\n|.)*\") {fprintf(yyout,"SCONSTANT\n");
+(\"(\\n|.)*\") {printf("SCONSTANT\n");
     }
-([0-9])+ {fprintf(yyout,"ICONSTANT\n"); 
+([0-9])+ {printf("ICONSTANT\n"); 
     }
 %%
 
