@@ -45,9 +45,9 @@
 "(" {return(LPAREN);}
 "<" {return(LT);}
 "-" {return(MINUS);}
-"--" {return(DECREMENT)}    
-"%" {return(MOD)}
-"*" {return(MULTIPLY)}
+"--" {return(DECREMENT);}    
+"%" {return(MOD);}
+"*" {return(MULTIPLY);}
 "!=" {return(NE)}
 "!" {return(NOT);}
 "." {return(PERIOD);}
