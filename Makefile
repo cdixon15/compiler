@@ -8,7 +8,7 @@ HDRS=flexing.h
 all:
 	flex flexing.l
 	bison flexing.y
-	 $(CC) $(HDRS) lex.yy.c flexing.tab.c -o $(EXECUTABLE)
+	 $(CC) lex.yy.c flexing.tab.c -o $(EXECUTABLE)
 	./$(EXECUTABLE) $(INPUT) $(OUTPUT)
 
 clean:
