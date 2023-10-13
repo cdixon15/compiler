@@ -9,7 +9,7 @@
 "do" {return (K_DO);}
 "double" {return(K_DOUBLE);}
 "else" {return(K_ELSE);}
-"exit" {return(K_EXIT\);}
+"exit" {return(K_EXIT);}
 "function" {return(K_FUNCTION);}
 "if" {return(K_IF);}
 "integer" {return(K_INTEGER);}
