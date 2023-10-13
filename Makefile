@@ -6,7 +6,8 @@ OUTPUT=output.txt
 
 all:
 	flex flexing.l
-	$(CC) lex.yy.c -o $(EXECUTABLE)
+	bison flexing.y
+	$(CC) lex.yy.c flexing.tab.c -o $(EXECUTABLE)
 	./$(EXECUTABLE) $(INPUT) $(OUTPUT)
 
 clean:
