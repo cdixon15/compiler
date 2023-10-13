@@ -6,7 +6,7 @@ OUTPUT=output.txt
 HDRS=flexing.h
 
 all:
-	flex flexing.l
+	flex++ flexing.l
 	bison flexing.y
 	 $(CC) lex.yy.c flexing.tab.c -o $(EXECUTABLE)
 	./$(EXECUTABLE) $(INPUT) $(OUTPUT)
