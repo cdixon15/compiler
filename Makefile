@@ -3,11 +3,12 @@ CC = gcc
 EXECUTABLE = f23
 INPUT=mg.f23
 OUTPUT=output.txt
+HDRS=flexing.h
 
 all:
 	flex flexing.l
 	bison flexing.y
-	$(CC) lex.yy.c flexing.tab.c -o $(EXECUTABLE)
+	$(HDRS) $(CC) lex.yy.c flexing.tab.c -o $(EXECUTABLE)
 	./$(EXECUTABLE) $(INPUT) $(OUTPUT)
 
 clean:
