@@ -1,5 +1,5 @@
 %{
-#include <iostream>
+#include <stdio.h>
 #include "flexing.h"
 #include <FlexLexer.h>
 
